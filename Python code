@@ -67,6 +67,10 @@ Y_pred = classifier.predict(X_test)
 #Converting the probabilities to 0 and 1.
 Y_pred = (Y_pred > 0.5)
 
+#Prediction for a single customer
+new_prediction = classifier.predict(sc_X.transform(np.array([[0, 0, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]])))
+new_prediction = (new_prediction > 0.5)
+
 #Making the confusion matrix
 
 from sklearn.metrics import confusion_matrix
